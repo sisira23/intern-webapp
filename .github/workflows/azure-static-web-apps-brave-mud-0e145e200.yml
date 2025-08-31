@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
-       id-token: write
-       contents: read
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
         with:
@@ -30,10 +30,10 @@ jobs:
         uses: actions/github-script@v6
         id: idtoken
         with:
-           script: |
-               const coredemo = require('@actions/core')
-               return await coredemo.getIDToken()
-           result-encoding: string
+          script: |
+            const coredemo = require('@actions/core')
+            return await coredemo.getIDToken()
+          result-encoding: string
 
       - name: Build And Deploy
         id: builddeploy
@@ -44,7 +44,7 @@ jobs:
           app_location: "/"       # root of repo
           api_location: ""        # no API
           output_location: "."    # root folder
-          app_build_command: ""   # <--- disables build
+          app_build_command: ""   # disables build
           github_id_token: ${{ steps.idtoken.outputs.result }}
 
   close_pull_request_job:
