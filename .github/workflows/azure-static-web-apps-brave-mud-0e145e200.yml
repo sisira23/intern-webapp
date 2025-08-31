@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: false
+          submodules: false   # <--- disable submodules
           lfs: false
 
       - name: Install OIDC Client from Core Package
@@ -41,10 +41,10 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_PLANT_0DC823800 }}
           action: "upload"
-          app_location: "/"       # Root of repo
-          api_location: ""        # No API
-          output_location: "."    # Root folder, no build
-          app_build_command: ""   # <--- Important: disable build
+          app_location: "/"       # root of repo
+          api_location: ""        # no API
+          output_location: "."    # root folder
+          app_build_command: ""   # <--- disables build
           github_id_token: ${{ steps.idtoken.outputs.result }}
 
   close_pull_request_job:
