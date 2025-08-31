@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "intern-webapp",
+			"path": "../../intern-webapp"
+		},
+		{
+			"name": "intern-webapp-1",
+			"path": "../../../intern-webapp-1"
+		}
+	],
+	"settings": {}
+}
